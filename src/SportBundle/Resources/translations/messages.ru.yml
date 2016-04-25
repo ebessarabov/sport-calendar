@@ -1,0 +1,14 @@
+# Calendar page
+calendar.page.title: "Календарь"
+calendar.page.greeting: "Привет %user%!"
+calendar.page.introduction: "Проверьте, чем вы занимались на 3 последних тренировках"
+calendar.page.table.today: "Сегодня"
+calendar.page.table.one_week_ago: "Неделя назад"
+calendar.page.table.two_weeks_ago: "Две недели назад"
+calendar.page.table.empty_table: "Нет выполненных упражнений"
+calendar.page.logout: "Выход"
+
+# Login page
+login.page.button.login: "Вход"
+login.page.field.username: "Пользователь"
+login.page.field.password: "Пароль"

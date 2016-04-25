@@ -1,0 +1,14 @@
+# src/SportBundle/DataFixtures/ORM/exercise.yml
+SportBundle\Entity\User:
+    user{yevhen, dell, black}:
+        username: <current()>
+        password: <current()>
+
+SportBundle\Entity\Exercise:
+    exercise_{1..400}:
+        description: <randomElement(['Deadlift', 'Leg extension', 'Pectorals'])>
+        weight: <numberBetween(20, 200)>
+        count: <numberBetween(5, 15)>
+        date: <dateTimeBetween('-30 days', 'now')>
+        time: <dateTimeBetween('-30 days', 'now')>
+        user: '@user*'

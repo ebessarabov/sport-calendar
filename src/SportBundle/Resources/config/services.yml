@@ -1,0 +1,11 @@
+services:
+
+  exercise_repository:
+      class: Doctrine\ORM\EntityRepository
+      factory: ['@doctrine.orm.entity_manager', getRepository]
+      arguments: ['SportBundle:Exercise']
+
+  calendar_service:
+      class: SportBundle\Services\CalendarService
+      arguments:
+          - '@exercise_repository'

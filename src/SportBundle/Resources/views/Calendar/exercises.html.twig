@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'calendar.page.title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'calendar.page.greeting'|trans({'%user%': app.user.username}) }}</h1>
+    <p>{{ 'calendar.page.introduction'|trans }}</p>
+
+    {% set lengths = [exercises['today']|length, exercises['one_week_ago']|length, exercises['two_weeks_ago']|length] %}
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>{{ 'calendar.page.table.two_weeks_ago'|trans }}</th>
+                <th>{{ 'calendar.page.table.one_week_ago'|trans }}</th>
+                <th>{{ 'calendar.page.table.today'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in 0..max(lengths) - 1 %}
+            <tr>
+                {% if exercises['two_weeks_ago'][i] is defined %}
+                    <td>
+                        {{ exercises['two_weeks_ago'][i].description }}
+                        {{ exercises['two_weeks_ago'][i].weight }}
+                        {{ exercises['two_weeks_ago'][i].count }}
+                    </td>
+                {% endif %}
+                {% if exercises['one_week_ago'][i] is defined %}
+                    <td>
+                    {{ exercises['one_week_ago'][i].description }}
+                    {{ exercises['one_week_ago'][i].weight }}
+                    {{ exercises['one_week_ago'][i].count }}
+                    </td>
+                {% endif %}
+                {% if exercises['today'][i] is defined %}
+                    <td>
+                        {{ exercises['today'][i].description }}
+                        {{ exercises['today'][i].weight }}
+                        {{ exercises['today'][i].count }}
+                    </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">{{ 'calendar.page.table.empty_table'|trans }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p>
+        <a href="{{ path('logout') }}">{{ 'calendar.page.logout'|trans }}</a>
+    </p>
+{% endblock %}

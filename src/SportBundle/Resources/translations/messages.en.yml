@@ -1,0 +1,14 @@
+# Calendar page
+calendar.page.title: "Calendar"
+calendar.page.greeting: "Hi %user%!"
+calendar.page.introduction: "Check what you did in last 3 trainins"
+calendar.page.table.today: "today"
+calendar.page.table.one_week_ago: "1 week ago"
+calendar.page.table.two_weeks_ago: "2 weeks ago"
+calendar.page.table.empty_table: "There are no exercises"
+calendar.page.logout: "Logout"
+
+# Login page
+login.page.button.login: "Login"
+login.page.field.username: "Username"
+login.page.field.password: "Password"
