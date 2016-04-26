@@ -8,3 +8,10 @@ sport:
 
 logout:
     path: /logout
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /en/login
+        permanent: true

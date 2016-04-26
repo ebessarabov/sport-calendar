@@ -34,7 +34,7 @@ class CalendarService
     public function getData(User $user, \DateTime $date = null)
     {
         if (null === $date) {
-            $date = new \DateTime('today');
+            $date = new \DateTimeImmutable('today');
         }
 
         $data = [
